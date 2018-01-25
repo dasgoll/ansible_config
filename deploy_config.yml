@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+    - include_vars: "{{ theEnvironment }}.json"
+
+    - name: Install config from template
+      template:
+        src: config.ini.j2
+        dest: /etc/config.ini
